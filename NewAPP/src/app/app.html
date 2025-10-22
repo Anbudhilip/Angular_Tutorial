@@ -1,14 +1,10 @@
-<div>
-
-  <nav class="navbar mb-2 bg-danger-subtle text-danger-emphasis">
-    <div class="container-fluid">
-      <p class="navbar-brand">Welcome to Angular</p>
-      <a class="" routerLink="">Home</a>
-        <a class="" routerLink="about">About</a>
-         <app-search-bar></app-search-bar>
-    </div>
-  </nav>
-
+  <div class="header">
+<app-nav-bar></app-nav-bar>
 </div>
-
-<router-outlet></router-outlet>
+<div class="sidebar">
+  <app-side-bar></app-side-bar>
+</div>
+<div class="content">
+   <router-outlet></router-outlet>
+</div> 
+ 

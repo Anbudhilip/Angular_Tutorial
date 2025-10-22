@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-success">
+              Angular List
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <th style="border-width: 2px;">Topic name</th>
+                            <th style="border-width: 2px;">Definition</th>
+                            <th style="border-width: 2px;">Why it's need</th>
+                            <th style="border-width: 2px;">Real time use</th>
+                            <th style="border-width: 2px;">CreatedOn</th>
+                            <th style="border-width: 2px;">RefId</th>
+                            <th style="border-width: 2px;">Actions</th>
+                        </thead>
+                        <tbody>
+                            @for (obj of items;track $index ){
+                                <tr>
+                                     <td>{{obj.TopicName}}</td>
+                                      <td>{{obj.TopicDefinition}}</td>
+                                       <td>{{obj.WhyItsNeed}}</td>
+                                        <td>{{obj.RealTimeUse}}</td>
+                                         <td>{{obj.CreatedOn}}</td>
+                                          <td>{{obj.RefId}}</td>
+                                           <button class="bg-success" (click)="onEdit(obj)">Edit</button>
+                                          <button class="bg-warning" (click)="onDelete(obj.TopicId)">Delete</button>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="row">
+            <div class="card">
+                <div class="card-header bg-success">
+                 <h2> {{ item.TopicId===0? 'Add Topic' :'Edit Topic'}}</h2> 
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()">
+                    <div class="col-6">
+                        <label for="" >Topic Name</label>
+                        <input type="text" [(ngModel)]="item.TopicName" name="TopicName" class="form-group">
+                    </div>
+                      <div class="col-6">
+                        <label for="" >Topic Definition</label>
+                        <input type="text" [(ngModel)]="item.TopicDefinition" name="TopicDefinition" class="form-group">
+                    </div>
+                      <div class="col-6">
+                        <label for="" >Why it's need</label>
+                        <input type="text" [(ngModel)]="item.WhyItsNeed" name="WhyItsNeed" class="form-group">
+                    </div>
+                      <div class="col-6">
+                        <label for="" >Real time use</label>
+                        <input type="text" [(ngModel)]="item.RealTimeUse" name="RealTimeUse" class="form-group">
+                    </div>
+                       <div class="col-6">
+                        <label for="" >Created On</label>
+                        <input type="text" [(ngModel)]="item.CreatedOn" name="CreatedOn" class="form-group">
+                    </div>
+                       <div class="col-6">
+                        <label for="" >Ref Id</label>
+                        <input type="text" [(ngModel)]="item.RefId" name="RefId" class="form-group">
+                    </div>
+                    <br/>
+                    <button type="submit" class="bg-success">
+                        {{item.TopicId ===0?'Add':'Update'}}
+                    </button>
+                    <button class="bg-warning"> Cancel
+                    </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

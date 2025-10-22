@@ -1,0 +1,6 @@
+  .navbar {
+      /* static top nav */
+      position: static;
+      width: 100%;
+      z-index: 1000;
+    }

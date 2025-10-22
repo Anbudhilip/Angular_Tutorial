@@ -34,5 +34,11 @@ export class SearchBar implements OnInit {
     }else{
        this.filteredItems=[];
     }
+   console.log('topics',this.filteredItems);
    }
+   onSearch() {
+  // Optional: handle when user presses Enter
+  console.log('Search submitted:', this.searchControl.value);
+}
+
 }

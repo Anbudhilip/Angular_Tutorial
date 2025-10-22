@@ -1,14 +1,15 @@
-<form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" [formControl]="searchControl" placeholder="Search Angular Topics..."
-        aria-label="Search" />
-     <ul
-    *ngIf="filteredItems.length > 0"
-    class="dropdown-menu show"
-    style="position: absolute; top: 100%; right: 0; z-index: 1000; width: 30%;"
-  >
+<form class="d-flex">
+  <input class="form-control me-2"
+         type="search"
+         [formControl]="searchControl"
+         placeholder="Search Angular Topics..."
+         aria-label="Search" />
+  
+  <ul *ngIf="filteredItems.length > 0"
+      class="dropdown-menu show"
+      style="position: absolute; top: 10%; right: 0; z-index: 1000; width: 30%;">
     <li *ngFor="let item of filteredItems" class="dropdown-item bg-warning">
       {{ item }}
     </li>
   </ul>
-
 </form>

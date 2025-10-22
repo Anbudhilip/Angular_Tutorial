@@ -4,10 +4,14 @@ import { AppAppAppFormsComponent } from './app-forms/app-forms';
 import { importProvidersFrom } from '@angular/core';
 import {HomePage}from '../app/home-page/home-page';
 import {RouterModule} from '@angular/router';
-import {SearchBar} from '../app/home-page/search-bar/search-bar'
+import {SearchBar} from '../app/home-page/search-bar/search-bar';
+import { NavBar} from './home-page/nav-bar/nav-bar';
+import { SideBar } from './home-page/side-bar/side-bar';
+import { ContentPage } from './home-page/content-page/content-page';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterModule,SearchBar],
+  imports: [RouterModule,NavBar,SideBar],
   standalone:true,
   templateUrl: './app.html',
   styleUrl: './app.css'
