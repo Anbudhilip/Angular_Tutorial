@@ -6,9 +6,13 @@
 # ToDo Task
    --> add topic list and agaist the example
    --> align the UI
+   --> content read and write from txt file
+   ---> curd 
 
 25/09/25
 ---------
     initial base is developed.
 
+
+ng serve --port 4500
 

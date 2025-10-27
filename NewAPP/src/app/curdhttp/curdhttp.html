@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <th>Topics</th>
+                  <th>Questions</th>
+                    <th>Ansewers</th>
+            </tr>
+        </thead>
+        <tbody>
+         @for (post of posts;track $index ){
+            <tr>
+                 <td>{{post.Id}}</td>
+                <td>{{post.Topic}}</td>
+                <td>{{post.Question}}</td>
+                <td>{{post.Answer}}</td>
+                <td>
+                    
+                </td>
+            </tr>
+        }
+        </tbody>
+
+    </table>
+</div>

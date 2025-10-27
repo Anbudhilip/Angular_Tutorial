@@ -6,13 +6,15 @@ import { NavBar} from './home-page/nav-bar/nav-bar';
 import { SideBar } from './home-page/side-bar/side-bar';
 import { ContentPage } from './home-page/content-page/content-page';
 import { CURD } from './curd/curd';
+import { CURDHTTP } from './curdhttp/curdhttp';
 
 export const routes: Routes = [
 
     {path:'',component:HomePage},
-    {path:'about',component:AboutPage},
+    {path:'about',component:CURDHTTP},
     {path:'content',component:ContentPage},
-    {path:'curd',component:CURD}
+    {path:'curd',component:CURD},
+    {path:'curds',component:CURDHTTP}
     // {path:'**',redirectTo:''},
   //  { path: '', redirectTo: 'home', pathMatch: 'full' },
     //{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
