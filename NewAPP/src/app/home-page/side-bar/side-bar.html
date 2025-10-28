@@ -1,32 +1,46 @@
- <div class="sidebar">
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link" href="/dashboard" routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
-      </li>
-      <li class="nav-item">
-        <a href="/about" routerLink="/about" routerLinkActive="active-link">About</a>
-       </li>
-      <li class="nav-item">
-         <a href="/content" routerLink="/content" routerLinkActive="active-link">Content Page</a>
-      </li>
-      <li class="nav-item">
-        <a href="/curd" routerLink="/curd" routerLinkActive="active-link">CURD_localstorage</a>
-      </li>
-         <li class="nav-item">
-        <a href="/curds" routerLink="/curds" routerLinkActive="active-link">CURD_HTTP</a>
-      </li>
-     <li>
-      <a class="nav-link " data-bs-toggle="collapse" href="#submenu1" role="button" aria-expanded="false" aria-controls="submenu1">
+<div class="sidebar">
+  <ul class="nav flex-column">
+    <!-- ✅ Working main link -->
+    <li class="nav-item">
+      <a routerLink="/content" routerLinkActive="active-link">Content Page</a>
+    </li>
+
+    <!-- ✅ Angular Topics submenu -->
+    <li>
+      <a class="nav-link" data-bs-toggle="collapse" href="#submenu1" role="button"
+         aria-expanded="false" aria-controls="submenu1" (click)="getTopics()">
         <i class="bi bi-folder"></i> Angular Topics ▼
       </a>
+
       <div class="collapse" id="submenu1">
-        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-3">
-          <li><a href="#" class=" d-block py-1">Sub-item 1</a></li>
-          <li><a href="#" class=" d-block py-1">Sub-item 2</a></li>
-          <li><a href="#" class=" d-block py-1">Sub-item 3</a></li>
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-3 btn">
+          <li *ngFor="let post of posts; let i = index; trackBy: trackByIndex">
+            <!-- ✅ Either route or anchor, not both -->
+            <a [routerLink]="['/topics', post.Topic]" routerLinkActive="active-link" class="d-block py-1">
+              {{ post.Topic }}
+            </a>
+          </li>
         </ul>
       </div>
     </li>
-    </ul>
-  </div>
 
+    <!-- ✅ CURD section -->
+    <li>
+      <a class="nav-link" data-bs-toggle="collapse" href="#curd" role="button"
+         aria-expanded="false" aria-controls="curd">
+        <i class="bi bi-folder"></i> CURD operations ▼
+      </a>
+
+      <div class="collapse" id="curd">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-3">
+          <li>
+            <a routerLink="/curds" routerLinkActive="active-link" class="d-block py-1">HTTP_CURD</a>
+          </li>
+          <li>
+            <a routerLink="/curd" routerLinkActive="active-link" class="d-block py-1">LocalStorage_CURD</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
