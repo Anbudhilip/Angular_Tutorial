@@ -18,4 +18,6 @@ export const routes: Routes = [
     // {path:'**',redirectTo:''},
   //  { path: '', redirectTo: 'home', pathMatch: 'full' },
     //{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      // dynamic topic routes
+ // { path: 'topics/:topic', component: TopicDetailComponent }
 ];
