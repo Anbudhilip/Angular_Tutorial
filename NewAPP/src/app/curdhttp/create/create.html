@@ -1,1 +1,41 @@
-<p>create works!</p>
+<form>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h2>Create Your Angular Notes Here!</h2>
+            </div>
+            <div class="container mt-5 text-center">
+            <form [formGroup]="PostFrom" (ngSubmit)="onSubmit()">
+                <div class="row border">
+                    <div class="col-3 text-center">
+                     <label for="Topic" class="form-lable">Enter the Topic Name :</label>
+                     </div>
+                    <div class="col-9" >
+                    <input type="text" formControlName="topic" id="Topic" class="form-contro w-100 py-2" placeholder="eg.Data Binding">
+                    </div>
+                </div>
+                 <div class="row border">
+                    <div class="col-3 text-center">
+                     <label for="Question" class="form-lable">Enter the Question ?</label>
+                     </div>
+                    <div class="col-9" >
+                    <input type="text" formControlName="question" id="Question" class="form-control w-100 py-2" placeholder="eg. what is Data Binding ?">
+                    </div>
+                </div>
+                    <div class="row border">
+                    <div class="col-3 text-center">
+                     <label for="Answer" class="form-lable">Enter your Own Answer !:</label>
+                     </div>
+                    <div class="col-9" >
+                    <textarea id="Answer" formControlName="answer" class="form-control py-2"  placeholder="eg. Bind the data to other variable" style="height: 100px"></textarea>
+                    </div>
+                </div>
+               <div>
+                <button class="btn btn-danger" (click)="cancel()">cancel</button>
+                <button type="submit" class="btn btn-primary m-4" >Submit</button>
+               </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</form>
